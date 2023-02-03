@@ -60,6 +60,7 @@ body {
     height: 10vh;
     width: 10vw;
     transition-duration: 250ms;
+    transition: background-color 1s;
 }
 
 .box:hover {
