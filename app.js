@@ -11,66 +11,34 @@ var copyPattern = []
 
 
 function startGame() {
-    // log2.innerHTML = 'hello'
+    // log2.innerHTML = 'helloz'
     win.innerHTML = "Level 1"
     if (win.innerHTML == 'Level 1') {
-        // let count = 0
-        // while (count < 5) {
-        //     pattern[count] = index = Math.floor(Math.random() * 9)
-        //     x = document.querySelector('.n1')
-        //     // log2.innerHTML += x
-        //     // playPattern(index)
-
-        //     var intervalId = setInterval(function() {
-        //         container.children[index].style.backgroundColor= "red";
-        //       }, 2000);
-
-        //       setTimeout(function() {
-        //         clearInterval(intervalId);
-        //       }, 10000);
-
-        //     // setTimeout(function () {
-        //     //     container.children[index].style.backgroundColor = "yellow"
-        //     // }, 2000);
-
-
-        //     count++
-        // }
-        var count = 0;
-        var container = document.querySelector(".container");
-        var intervalId = setInterval(function () {
-            if (count >= 5) {
-                clearInterval(intervalId);
-                return;
+        pattern = []
+        copyPattern = []
+        playPattern()
+        async function playPattern() {
+            // container.children[0].style.backgroundColor = "white"
+            let count = 0
+            while (count < 5) {
+                pattern[count] = index = Math.floor(Math.random() * 9)
+                await sleep(800);
+                container.children[index].style.backgroundColor = "red"
+                await sleep(800);
+                container.children[index].style.backgroundColor = "white"
+                await sleep(800);
+                log1.innerHTML += index
+                count++
             }
-            
-            pattern[count] = index = Math.floor(Math.random() * 9)
-            log1.innerHTML += pattern[count]
-            container.children[index].style.backgroundColor = "red";
-            // container.children[index].style.backgroundColor = "white";
-            count++;
-            // log1.innerHTML += pattern[index]
 
-        }, 1000);
+        }
+
     }
-    pattern.forEach(x => log1.innerHTML += x)
+
+    // pattern.forEach(x => log2.innerHTML += x)
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    // async function playPattern() {
-    //     console.log("Hello");
-    //     await sleep(2000);
-    //     console.log("World!");
-    //     await sleep(2000);
-    //     console.log("Goodbye!");
-    // }
-    function playPattern(index) {
-        setTimeout(function () {
-            container.children[index].style.backgroundColor = "red"
-        }, 2000);
-        return
     }
 
 }
@@ -79,6 +47,30 @@ function startGame() {
 container.addEventListener('click', match)
 
 function match(e) {
+    if (e.target.classList.contains('box')) {
 
+
+        let str = e.target.className
+        var num = parseInt(str.split("n")[1])
+        // log2.innerHTML = num
+        copyPattern.push(num)
+        log2.innerHTML = pattern
+        win.innerHTML = copyPattern
+
+        if (copyPattern.length == pattern.length) {
+            for (let i = 0; i < pattern.length; i++) {
+                pattern[i] == copyPattern[i] ? win.innerHTML = 'good' : win.innerHTML = 'bad'
+            }
+        }
+
+
+        // win.innerHTML = 'good'
+
+        console.log(pattern)
+        console.log(copyPattern)
+        console.log(pattern[0] == copyPattern[0])
+        // log2.innerHTML = copyPattern
+        // copyPattern.forEach(x => log2.innerHTML += x)
+    }
 }
 startGame()
