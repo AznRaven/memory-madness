@@ -1,0 +1,101 @@
+body {
+    height: 98vh;
+    width: 99vw;
+    align-items: center;
+}
+
+.container {
+    flex-flow: column wrap;
+    margin-top: 20vh;
+    height: 30vh;
+    width: 31vw;
+    border: 1px solid red;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexC {
+    flex-direction: column;
+}
+
+.flexR {
+    flex-direction: row;
+}
+
+.log1,
+.log2,
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 5vh;
+    border: 1px solid red;
+}
+
+.psa {
+    border: 1px solid blue;
+    height: 7vh;
+    width: 100%;
+}
+
+.top {
+    height: 10vh;
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .top > div:last-child{
+    margin-left: auto;
+} */
+.n1,
+.n2,
+.n3,
+.n4,
+.n5,
+.n6,
+.n7,
+.n8,
+.n9 {
+    border: 1px solid red;
+    height: 10vh;
+    width: 10vw;
+    transition-duration: 250ms;
+}
+
+.n1:hover,
+.n2:hover,
+.n3:hover,
+.n4:hover,
+.n5:hover,
+.n6:hover,
+.n7:hover,
+.n8:hover,
+.n9:hover {
+    background-color: red;
+}
+
+.p1Div,
+.p2Div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 10vw
+}
+
+.p1,
+.p1p,
+.p2p,
+.p2 {
+    font-size: 3vh;
+}
+
+h1 {
+    font-size: 5vh;
+}
