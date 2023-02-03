@@ -9,7 +9,7 @@ body {
     margin-top: 20vh;
     height: 30vh;
     width: 31vw;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .flex {
@@ -54,33 +54,17 @@ body {
 /* .top > div:last-child{
     margin-left: auto;
 } */
-.n1,
-.n2,
-.n3,
-.n4,
-.n5,
-.n6,
-.n7,
-.n8,
-.n9 {
+
+.box {
     border: 1px solid red;
     height: 10vh;
     width: 10vw;
     transition-duration: 250ms;
 }
 
-.n1:hover,
-.n2:hover,
-.n3:hover,
-.n4:hover,
-.n5:hover,
-.n6:hover,
-.n7:hover,
-.n8:hover,
-.n9:hover {
+.box:hover {
     background-color: red;
 }
-
 .p1Div,
 .p2Div {
     display: flex;
