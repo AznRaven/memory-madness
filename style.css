@@ -3,7 +3,10 @@ body {
     width: 99vw;
     align-items: center;
 }
-
+.center {
+    justify-content: center;
+    align-items: center;
+}
 .container {
     flex-flow: column wrap;
     margin-top: 20vh;
@@ -22,6 +25,14 @@ body {
 
 .flexR {
     flex-direction: row;
+}
+.go {
+    height: 10vh;
+    width: 10vw;
+    margin-top: 10vh;
+    /* border: 1px solid red; */
+    transition: background-color 500ms;
+    font-size: 10vh;
 }
 
 .log1,

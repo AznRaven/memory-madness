@@ -7,6 +7,7 @@ var log1 = document.querySelector('.log1')
 var log2 = document.querySelector('.log2')
 var win = document.querySelector('.winner')
 var container = document.querySelector('.container')
+var go = document.querySelector('.go')
 var pattern = []
 var copyPattern = []
 var playerTurn = 1
@@ -15,10 +16,12 @@ var playerTurn = 1
 
 function startGame() {
     // log2.innerHTML = 'helloz'
+    log1.innerHTML = ''
     win.innerHTML = "Level 1"
     if (win.innerHTML == 'Level 1') {
         pattern = []
         copyPattern = []
+        go.innerHTML = ''
         playPattern()
         async function playPattern() {
             // container.children[0].style.backgroundColor = "white"
@@ -33,7 +36,23 @@ function startGame() {
                 log1.innerHTML += index
                 count++
             }
+            await sleep(500);
+            go.style.backgroundColor = "red"
+            await sleep(500);
+            go.style.backgroundColor = "white"
+            await sleep(500);
+            go.style.backgroundColor = "yellow"
+            await sleep(500);
+            go.style.backgroundColor = "white"
+            await sleep(500);
+            go.style.backgroundColor = "green"
+            await sleep(500);
+            go.style.backgroundColor = "white"
+            await sleep(500);
+            go.innerHTML = 'GO'
+            await sleep(5000);
             await checkPattern()
+            startGame()
         }
         
     }
@@ -72,11 +91,11 @@ function match(e) {
         console.log(pattern)
         console.log(copyPattern)
         console.log(pattern[2] == copyPattern[2])
-        checkPattern()
         // log2.innerHTML = copyPattern
         // copyPattern.forEach(x => log2.innerHTML += x)
     }
 }
+
 function checkPattern(){
     if (copyPattern.length == pattern.length) {
         for (let i = 0; i < pattern.length; i++) {
@@ -84,7 +103,7 @@ function checkPattern(){
         }
     }
     p1p.innerHTML = p1points
-    console.log('hello')
+    
 }
 
 startGame()
