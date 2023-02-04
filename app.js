@@ -181,7 +181,7 @@ const correct = new Audio('correct.mp3');
 // audioElement.play();
 
 go.style.color = "Red"
-go.innerHTML = 'Click on the boxes in the same order as the pattern'
+go.innerHTML = 'Watch Pattern. Copy Pattern.'
 var btn = document.querySelector('button')
 var btnReset = document.querySelector('.btnReset')
 btnReset.style.display = 'none'
