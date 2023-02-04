@@ -33,12 +33,15 @@ body {
 }
 
 .go {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
     width: 15vw;
     margin-top: 10vh;
     /* border: 1px solid red; */
     transition: background-color 500ms;
-    font-size: 6vh;
+    font-size: 5vh;
     color: white;
 }
 
@@ -82,7 +85,7 @@ body {
     width: 10vw;
     transition-duration: 250ms;
     transition: background-color 1s;
-    font-size: 5vh;
+    font-size: 10vh;
     align-items: center;
     justify-content: center;
 }
