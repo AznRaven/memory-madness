@@ -28,11 +28,12 @@ body {
 }
 .go {
     height: 10vh;
-    width: 10vw;
+    width: 15vw;
     margin-top: 10vh;
     /* border: 1px solid red; */
     transition: background-color 500ms;
-    font-size: 10vh;
+    font-size: 6vh;
+    color: white;
 }
 
 .log1,
@@ -92,7 +93,9 @@ body {
 .p2 {
     font-size: 3vh;
 }
-
+button{
+    margin-top: 5vh;
+}
 h1 {
     font-size: 5vh;
 }
