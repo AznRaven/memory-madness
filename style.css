@@ -46,11 +46,11 @@ body {
     height: 100%;
     width: 100%;
     font-size: 5vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .psa {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 7vh;
     width: 100%;
 }
@@ -58,7 +58,7 @@ body {
 .top {
     height: 10vh;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
