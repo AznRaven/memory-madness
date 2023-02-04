@@ -71,8 +71,10 @@ function startGame() {
             go.style.backgroundColor = "yellow"
             await sleep(400);
             go.style.backgroundColor = "white"
-            await sleep(400);
+            
+            await sleep(300);
             s3.play()
+            await sleep(100);
             go.innerHTML = 'GO'
             go.style.backgroundColor = "green"
             await sleep(400);
@@ -157,7 +159,6 @@ function soundOnly(src) {
         this.sound.pause();
     }
 }
-// var s1 = document.getElementById(".s1");
 const s3 = new Audio('go.wav');
 const s2 = new Audio('beep.mp3');
 const s1 = new Audio('bg2.mp3');

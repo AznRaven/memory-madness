@@ -2,6 +2,7 @@ body {
     height: 98vh;
     width: 99vw;
     align-items: center;
+    justify-content: center;
 }
 .center {
     justify-content: center;
@@ -95,8 +96,8 @@ body {
 }
 button{
     margin-top: 5vh;
-    height: 10vh;
-    width: 10vw;
+    height: 5vh;
+    width: 5vw;
 }
 h1 {
     font-size: 5vh;
