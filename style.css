@@ -74,9 +74,9 @@ body {
     transition: background-color 1s;
 }
 
-.box:hover {
+/* .box:hover {
     background-color: red;
-}
+} */
 .p1Div,
 .p2Div {
     display: flex;

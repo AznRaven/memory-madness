@@ -10,12 +10,14 @@ var container = document.querySelector('.container')
 var go = document.querySelector('.go')
 var pattern = []
 var copyPattern = []
-var playerTurn = 1
-
+var playerTurn = 2
+var round = 2
 
 
 function startGame() {
     // log2.innerHTML = 'helloz'
+    playerTurn == 2? playerTurn = 1
+    : playerTurn = 2
     log1.innerHTML = ''
     win.innerHTML = "Level 1"
     if (win.innerHTML == 'Level 1') {
@@ -26,7 +28,7 @@ function startGame() {
         async function playPattern() {
             // container.children[0].style.backgroundColor = "white"
             let count = 0
-            while (count < 2) {
+            while (count < round) {
                 pattern[count] = index = Math.floor(Math.random() * 9)
                 await sleep(800);
                 container.children[index].style.backgroundColor = "red"
@@ -70,7 +72,7 @@ container.addEventListener('click', match)
 
 function match(e) {
     if (e.target.classList.contains('box')) {
-        p1p.innerHTML = p1points
+        // p1p.innerHTML = p1points
 
         let str = e.target.className
         var num = parseInt(str.split("n")[1])
@@ -97,12 +99,20 @@ function match(e) {
 }
 
 function checkPattern(){
+    points = 0
     if (copyPattern.length == pattern.length) {
         for (let i = 0; i < pattern.length; i++) {
-            pattern[i] == copyPattern[i] ? p1points += 1 : win.innerHTML = 'bad'
+            pattern[i] == copyPattern[i] ? points += 1 : win.innerHTML = 'bad'
         }
     }
-    p1p.innerHTML = p1points
+    if(playerTurn == 1){
+        p1points += points
+        p1p.innerHTML = p1points
+    }else{
+        p2points += points
+        p2p.innerHTML = p2points
+    }
+    
     
 }
 
