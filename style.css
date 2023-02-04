@@ -3,6 +3,8 @@ body {
     width: 99vw;
     align-items: center;
     justify-content: center;
+    background-image: url("bg.jpg");
+    background-size: cover;
 }
 .center {
     justify-content: center;
@@ -62,6 +64,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #3d3b30;
+    opacity: .8;
 }
 
 /* .top > div:last-child{
@@ -93,12 +97,17 @@ body {
 .p2p,
 .p2 {
     font-size: 3vh;
+    color: white;
 }
 button{
     margin-top: 5vh;
     height: 5vh;
     width: 5vw;
+    background-color: #5c80bc;
+    color: white;
+    font-size: 3vh;
 }
 h1 {
     font-size: 5vh;
+    color: #e7e247;
 }
