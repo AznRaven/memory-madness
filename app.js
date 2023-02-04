@@ -104,7 +104,10 @@ container.addEventListener('click', match)
 function match(e) {
     if (e.target.classList.contains('box')) {
         // p1p.innerHTML = p1points
-
+        // for(let i = 0; i < container.children.length; i++){
+        //     container.children[i].style.backgroundColor = '' 
+        // }
+        // e.target.style.backgroundColor = "red"
         let str = e.target.className
         var num = parseInt(str.split("n")[1])
         // log2.innerHTML = num
@@ -171,6 +174,8 @@ const s1 = new Audio('bg2.mp3');
 go.style.color = "Red"
 go.innerHTML = 'Click on the boxes in the same order as the pattern'
 var btn = document.querySelector('button')
+var btnReset = document.querySelector('.btnReset')
+
 btn.addEventListener('click', start)
 function start() {
     go.innerHTML = ''
@@ -179,4 +184,8 @@ function start() {
     s1.play()
     // waitSound2.play()
     startGame()
+}
+btnReset.addEventListener('click', reset)
+function reset() {
+    location.reload()
 }

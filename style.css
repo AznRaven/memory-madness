@@ -6,10 +6,12 @@ body {
     background-image: url("bg.jpg");
     background-size: cover;
 }
+
 .center {
     justify-content: center;
     align-items: center;
 }
+
 .container {
     flex-flow: column wrap;
     margin-top: 20vh;
@@ -29,6 +31,7 @@ body {
 .flexR {
     flex-direction: row;
 }
+
 .go {
     height: 10vh;
     width: 15vw;
@@ -99,7 +102,9 @@ body {
     font-size: 3vh;
     color: white;
 }
-button{
+
+button,
+btnReset {
     margin-top: 5vh;
     height: 5vh;
     width: 5vw;
@@ -107,6 +112,7 @@ button{
     color: white;
     font-size: 3vh;
 }
+
 h1 {
     font-size: 5vh;
     color: #e7e247;
