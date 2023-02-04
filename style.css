@@ -95,6 +95,8 @@ body {
 }
 button{
     margin-top: 5vh;
+    height: 10vh;
+    width: 10vw;
 }
 h1 {
     font-size: 5vh;

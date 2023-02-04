@@ -160,7 +160,7 @@ function soundOnly(src) {
 // var s1 = document.getElementById(".s1");
 const s3 = new Audio('go.wav');
 const s2 = new Audio('beep.mp3');
-const s1 = new Audio('bg1.mp3');
+const s1 = new Audio('bg2.mp3');
 // audioElement.play();
 var btn = document.querySelector('button')
 btn.addEventListener('click', start)
