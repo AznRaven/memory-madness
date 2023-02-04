@@ -1,3 +1,4 @@
+screen.orientation.lock('landscape');
 var p1p = document.querySelector('.p1p')
 var p2p = document.querySelector('.p2p')
 var p1D = document.querySelector('.p1Div')
@@ -121,7 +122,7 @@ function match(e) {
         // log2.innerHTML = num
         copyPattern.push(num)
         // log2.innerHTML = pattern
-        win.innerHTML = copyPattern
+        // win.innerHTML = copyPattern
 
         // if (copyPattern.length == pattern.length) {
         //     for (let i = 0; i < pattern.length; i++) {
