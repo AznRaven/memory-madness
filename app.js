@@ -175,7 +175,7 @@ go.style.color = "Red"
 go.innerHTML = 'Click on the boxes in the same order as the pattern'
 var btn = document.querySelector('button')
 var btnReset = document.querySelector('.btnReset')
-
+btnReset.style.display = 'none'
 btn.addEventListener('click', start)
 function start() {
     go.innerHTML = ''
@@ -183,6 +183,8 @@ function start() {
     s1.volume = .5
     s1.play()
     // waitSound2.play()
+    btn.style.display = 'none'
+    btnReset.style.display = ''
     startGame()
 }
 btnReset.addEventListener('click', reset)
