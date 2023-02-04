@@ -1,5 +1,7 @@
 var p1p = document.querySelector('.p1p')
 var p2p = document.querySelector('.p2p')
+var p1D = document.querySelector('.p1Div')
+var p2D = document.querySelector('.p2Div')
 var points = 0
 var p1points = 0
 var p2points = 0
@@ -16,8 +18,15 @@ var round = 2
 
 function startGame() {
     // log2.innerHTML = 'helloz'
-    playerTurn == 2? playerTurn = 1
-    : playerTurn = 2
+    if(playerTurn == 2){
+        playerTurn = 1
+        p1D.style.borderColor = "green"
+        p2D.style.borderColor = "white"
+    }else{
+        playerTurn = 2
+        p2D.style.borderColor = "green"
+        p1D.style.borderColor = "white"
+    }
     log1.innerHTML = ''
     win.innerHTML = "Level 1"
     if (win.innerHTML == 'Level 1') {
@@ -28,6 +37,16 @@ function startGame() {
         async function playPattern() {
             // container.children[0].style.backgroundColor = "white"
             let count = 0
+            if(p1points >= 3 || p2points >= 3){
+                win.innerHTML = "Level 2"
+                round = 3
+            }else if(p1points >= 10 || p2points >= 10){
+                win.innerHTML = "Level 3"
+                round = 5
+            }else if(p1points >= 15 || p2points >= 15){
+                win.innerHTML = "Level 4"
+                round = 6
+            }
             while (count < round) {
                 pattern[count] = index = Math.floor(Math.random() * 9)
                 await sleep(800);
