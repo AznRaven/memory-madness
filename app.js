@@ -39,7 +39,10 @@ function startGame() {
         async function playPattern() {
             // container.children[0].style.backgroundColor = "white"
             let count = 0
-            if (p1points >= 15 || p2points >= 15) {
+            if (p1points >= 25 || p2points >= 25){
+                win.innerHTML = "Level 5"
+                round = 6
+            }else if (p1points >= 15 || p2points >= 15) {
                 win.innerHTML = "Level 4"
                 round = 5
             } else if (p1points >= 10 || p2points >= 10) {
