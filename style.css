@@ -82,7 +82,7 @@ body {
     width: 10vw;
     transition-duration: 250ms;
     transition: background-color 1s;
-    font-size: 10vh;
+    font-size: 5vh;
     align-items: center;
     justify-content: center;
 }

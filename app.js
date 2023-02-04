@@ -181,7 +181,7 @@ const correct = new Audio('correct.mp3');
 // audioElement.play();
 
 go.style.color = "Red"
-go.innerHTML = 'Watch Pattern. Copy Pattern.'
+go.innerHTML = 'Watch Pattern. <br>Copy Pattern.' 
 var btn = document.querySelector('button')
 var btnReset = document.querySelector('.btnReset')
 btnReset.style.display = 'none'
