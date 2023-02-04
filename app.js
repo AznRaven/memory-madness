@@ -29,7 +29,7 @@ function startGame() {
         p2D.style.borderColor = "green"
         p1D.style.borderColor = "white"
     }
-    log1.innerHTML = ''
+    // log1.innerHTML = ''
     win.innerHTML = "Level 1"
     if (win.innerHTML == 'Level 1') {
         pattern = []
@@ -39,10 +39,10 @@ function startGame() {
         async function playPattern() {
             // container.children[0].style.backgroundColor = "white"
             let count = 0
-            if (p1points >= 25 || p2points >= 25){
+            if (p1points >= 25 || p2points >= 25) {
                 win.innerHTML = "Level 5"
                 round = 6
-            }else if (p1points >= 15 || p2points >= 15) {
+            } else if (p1points >= 15 || p2points >= 15) {
                 win.innerHTML = "Level 4"
                 round = 5
             } else if (p1points >= 10 || p2points >= 10) {
@@ -56,10 +56,14 @@ function startGame() {
                 pattern[count] = index = Math.floor(Math.random() * 9)
                 await sleep(800);
                 container.children[index].style.backgroundColor = "red"
+                container.children[index].style.color = "white"
+                container.children[index].innerHTML = (count + 1)
                 await sleep(800);
+                container.children[index].innerHTML = ''
+                container.children[index].style.color = ""
                 container.children[index].style.backgroundColor = ""
                 await sleep(800);
-                log1.innerHTML += index
+                // log1.innerHTML += index
                 count++
             }
             await sleep(400);
@@ -74,7 +78,6 @@ function startGame() {
             go.style.backgroundColor = "yellow"
             await sleep(400);
             go.style.backgroundColor = ""
-            
             await sleep(300);
             s3.play()
             await sleep(100);
@@ -84,6 +87,11 @@ function startGame() {
             go.innerHTML = ''
             go.style.backgroundColor = ""
             await sleep(5000);
+            
+            for (let i = 0; i < container.children.length; i++) {
+                container.children[i].style.backgroundColor = ''
+            }
+
             await checkPattern()
             startGame()
         }
@@ -107,12 +115,12 @@ function match(e) {
         // for(let i = 0; i < container.children.length; i++){
         //     container.children[i].style.backgroundColor = '' 
         // }
-        // e.target.style.backgroundColor = "red"
+        e.target.style.backgroundColor = "red"
         let str = e.target.className
         var num = parseInt(str.split("n")[1])
         // log2.innerHTML = num
         copyPattern.push(num)
-        log2.innerHTML = pattern
+        // log2.innerHTML = pattern
         win.innerHTML = copyPattern
 
         // if (copyPattern.length == pattern.length) {
@@ -148,7 +156,7 @@ function checkPattern() {
         p2p.innerHTML = p2points
     }
 
-
+    JSON.stringify(pattern) === JSON.stringify(copyPattern) ? correct.play() : null
 }
 
 function soundOnly(src) {
@@ -169,6 +177,7 @@ function soundOnly(src) {
 const s3 = new Audio('go.wav');
 const s2 = new Audio('beep.mp3');
 const s1 = new Audio('bg2.mp3');
+const correct = new Audio('correct.mp3');
 // audioElement.play();
 
 go.style.color = "Red"
@@ -176,17 +185,20 @@ go.innerHTML = 'Click on the boxes in the same order as the pattern'
 var btn = document.querySelector('button')
 var btnReset = document.querySelector('.btnReset')
 btnReset.style.display = 'none'
+
 btn.addEventListener('click', start)
+
 function start() {
     go.innerHTML = ''
     go.style.color = 'white'
-    s1.volume = .5
+    s1.volume = 0.2
     s1.play()
     // waitSound2.play()
     btn.style.display = 'none'
     btnReset.style.display = ''
     startGame()
 }
+
 btnReset.addEventListener('click', reset)
 function reset() {
     location.reload()
