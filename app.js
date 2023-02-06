@@ -193,6 +193,7 @@ function start() {
     go.innerHTML = ''
     go.style.color = 'white'
     s1.volume = 0.2
+    s1.loop = "true"
     s1.play()
     // waitSound2.play()
     btn.style.display = 'none'
